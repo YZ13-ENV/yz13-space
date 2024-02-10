@@ -1,11 +1,14 @@
 import { user as user_api } from '@/api/user'
+import { projects } from '@/const/projects'
 import Image from 'next/image'
 import Link from 'next/link'
 import { BiLogoGithub } from 'react-icons/bi'
+import Project from './_components/project'
 
 export default async function Home() {
   const user = await user_api.get()
   const repos = await user_api.repos.get()
+  const matched = repos.filter(repo => !!projects.find(project => project.projectId === repo.name))
   return (
     <main className="w-full h-screen">
       <div className="w-full max-w-md mx-auto h-96 flex flex-col gap-4 items-center justify-center px-6">
@@ -24,16 +27,11 @@ export default async function Home() {
         <Link href='https://github.com/yz13-env' className="w-6 aspect-square flex items-center justify-center">
           <BiLogoGithub size={24} />
         </Link>
-        <div aria-label="link-to-social" className="w-6 aspect-square flex items-center justify-center" />
+        {/* <div aria-label="link-to-social" className="w-6 aspect-square flex items-center justify-center" /> */}
       </div>
       <div className="w-full max-w-md mx-auto px-6 py-4">
         {
-          repos.map(repo =>
-            <Link href={repo.html_url} key={repo.id} className="w-full flex flex-col border-b py-2">
-              <span className="font-medium text-accent-foreground text-start">{ repo.name }</span>
-              <span className="text-sm text-muted-foreground text-start">{ repo.description || 'Без описания' }</span>
-            </Link>
-          )
+          matched.map(repo => <Project key={repo.id} repo={repo} />)
         }
       </div>
     </main>

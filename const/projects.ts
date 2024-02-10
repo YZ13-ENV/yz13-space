@@ -23,7 +23,7 @@ type Project = {
 export const type_variants = (type: Project['type']) => type === 'app' ? "приложение" : "библиотека"
 export const projects: Project[] = [
   {
-    projectId: "darkmaterial",
+    projectId: "dm",
     type: "app",
     name: "Darkmaterial",
     description: "Приложение для управления аккаунтом",
