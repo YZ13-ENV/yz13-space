@@ -4,7 +4,6 @@ type ProjectIcon = CDN_LINK
 type ProjectsGroup = {
   groupId: string
   name: string
-  description: string
   icon?: ProjectIcon
 }
 type Project = {
@@ -21,6 +20,15 @@ type Project = {
   partOf: string[] // Нужно для перечисления принадлежности к другим проекта
 }
 export const type_variants = (type: Project['type']) => type === 'app' ? "приложение" : "библиотека"
+export const status_variants = (status: Project['status']) => status === 'dev'
+? "Разработка"
+: status === 'planned'
+? "Планируется"
+: status === 'pre-prod'
+? "Тестируется"
+: status === 'prod'
+? "Работает"
+: "Неизвестно"
 export const projects: Project[] = [
   {
     projectId: "dm",
@@ -47,12 +55,24 @@ export const projects: Project[] = [
     createdAt: 0,
     icon: 'https://cdn.darkmaterial.space/dm/icons/frame-dark.svg',
     tags: []
+  },
+  {
+    projectId: "team",
+    type: "app",
+    name: "Team",
+    description: "Приложение для создания и управления командой",
+    status: "pre-prod",
+    link: "https://team.darkmaterial.space",
+    partOf: [ "darkmaterial-group" ],
+    disabled: false,
+    createdAt: 0,
+    icon: "https://cdn.darkmaterial.space/dm/icons/team-dark.svg",
+    tags: []
   }
 ]
 export const projects_groups: ProjectsGroup[] = [
   {
     name: "Darkmaterial",
-    description: "Большой проект :)",
     groupId: "darkmaterial-group",
   }
 ]

@@ -2,7 +2,7 @@ import { user as user_api } from '@/api/user'
 import { projects } from '@/const/projects'
 import Image from 'next/image'
 import Link from 'next/link'
-import { BiLogoGithub } from 'react-icons/bi'
+import { BiLogoGithub, BiLogoTelegram } from 'react-icons/bi'
 import Project from './_components/project'
 
 export default async function Home() {
@@ -11,7 +11,7 @@ export default async function Home() {
   const matched = repos.filter(repo => !!projects.find(project => project.projectId === repo.name))
   return (
     <main className="w-full h-screen">
-      <div className="w-full max-w-md mx-auto h-96 flex flex-col gap-4 items-center justify-center px-6">
+      <div className="w-full max-w-md mx-auto h-fit flex flex-col gap-4 items-center justify-center px-6 py-12">
         {
           user
           ? <Image src={user.avatar_url} className='rounded-full' width={96} height={96} alt='user-avatar' />
@@ -23,11 +23,14 @@ export default async function Home() {
         </div>
         <span className='text-center text-sm text-muted-foreground'>{ user?.bio }</span>
       </div>
-      <div className="w-full h-fit flex items-center justify-center gap-2 py-6">
+      <div className="w-full h-fit max-w-md mx-auto flex items-center justify-center gap-2 py-6">
         <Link href='https://github.com/yz13-env' className="w-6 aspect-square flex items-center justify-center">
           <BiLogoGithub size={24} />
         </Link>
-        {/* <div aria-label="link-to-social" className="w-6 aspect-square flex items-center justify-center" /> */}
+         <Link href='https://t.me/YZTHECEO' className="w-6 aspect-square flex items-center justify-center">
+          <BiLogoTelegram size={24} />
+         </Link>
+        <div className="w-6 aspect-square flex items-center justify-center" />
       </div>
       <div className="w-full max-w-md mx-auto px-6 py-4">
         {
