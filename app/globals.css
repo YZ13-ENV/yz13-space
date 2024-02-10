@@ -65,12 +65,34 @@
     --ring: 0 0% 83.1%;
   }
 }
-
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .second-font {
+    font-family: var(--second-font);
+  }
+  * {
+    font-family: var(--root-font);
+  }
+  ::-webkit-scrollbar {
+    width: .5rem;
+    height: .5rem;
+    cursor: pointer;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    width: .5rem;
+    height: .5rem;
+    border-radius: 9999px;
+    @apply bg-secondary;
+  }
+  ::selection {
+    @apply bg-primary text-primary-foreground
   }
 }
