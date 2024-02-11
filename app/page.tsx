@@ -30,7 +30,7 @@ export default async function Home() {
          <Link href='https://t.me/YZTHECEO' className="w-6 aspect-square flex items-center justify-center">
           <BiLogoTelegram size={24} />
          </Link>
-        <div className="w-6 aspect-square flex items-center justify-center" />
+        {/* <div className="w-6 aspect-square flex items-center justify-center" /> */}
       </div>
       <div className="w-full max-w-md mx-auto px-6 py-4">
         {
