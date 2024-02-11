@@ -5,4 +5,5 @@ export type Repo = {
   html_url: string
   language: string
   description: string | null
+  created_at: string
 }

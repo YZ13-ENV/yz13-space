@@ -68,6 +68,71 @@ export const projects: Project[] = [
     createdAt: 0,
     icon: "https://cdn.darkmaterial.space/dm/icons/team-dark.svg",
     tags: []
+  },
+  {
+    projectId: "notes",
+    type: "app",
+    name: "Keeper",
+    description: "",
+    status: "pre-prod",
+    link: "https://keeper.darkmaterial.space",
+    partOf: [ "darkmaterial-group" ],
+    disabled: false,
+    createdAt: 0,
+    icon: "https://cdn.darkmaterial.space/dm/icons/keeper-dark.svg",
+    tags: []
+  },
+  {
+    projectId: "docs",
+    type: "app",
+    name: "Documentation",
+    description: "",
+    status: "dev",
+    link: "https://docs.darkmaterial.space",
+    partOf: [ "darkmaterial-group" ],
+    disabled: false,
+    createdAt: 0,
+    icon: "https://cdn.darkmaterial.space/dm/icons/dm-star-dark.svg",
+    tags: []
+  },
+  {
+    projectId: "yz13-portfolio",
+    type: "app",
+    name: "YZ13",
+    description: "",
+    status: "prod",
+    link: "https://yz13.darkmaterial.space",
+    partOf: [ "darkmaterial-group" ],
+    disabled: false,
+    createdAt: 0,
+    icon: "https://cdn.darkmaterial.space/dm/icons/YZ13-dark.svg",
+    tags: []
+  },
+  {
+    projectId: "calendar",
+    type: "app",
+    name: "Calendar",
+    description: "",
+    status: "pre-prod",
+    link: "https://calendar.darkmaterial.space",
+    partOf: [ "darkmaterial-group" ],
+    disabled: false,
+    createdAt: 0,
+    icon: "https://cdn.darkmaterial.space/dm/icons/dm-star-dark.svg",
+    tags: []
+  },
+  {
+    projectId: "plus",
+    type: "app",
+    name: "Plus",
+    description: "",
+    status: "pre-prod",
+    link: "https://plus.darkmaterial.space",
+    partOf: [ "darkmaterial-group" ],
+    disabled: false,
+    createdAt: 0,
+    icon: "https://cdn.darkmaterial.space/dm/icons/dm-star-dark.svg",
+    tags: []
   }
 ]
 export const projects_groups: ProjectsGroup[] = [

@@ -34,7 +34,9 @@ export default async function Home() {
       </div>
       <div className="w-full max-w-md mx-auto px-6 py-4">
         {
-          matched.map(repo => <Project key={repo.id} repo={repo} />)
+          matched
+          .sort()
+          .map(repo => <Project key={repo.id} repo={repo} />)
         }
       </div>
     </main>
