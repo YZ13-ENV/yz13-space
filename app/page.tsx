@@ -11,7 +11,7 @@ export default async function Home() {
   const matched = repos.filter(repo => !!projects.find(project => project.projectId === repo.name))
   return (
     <main className="w-full h-screen">
-      <div className="w-full max-w-md mx-auto h-fit flex flex-col gap-4 items-center justify-center px-6 py-12">
+      <div className="w-full max-w-xl mx-auto h-fit flex flex-col gap-4 items-center justify-center px-6 py-12">
         {
           user
           ? <Image src={user.avatar_url} className='rounded-full' width={96} height={96} alt='user-avatar' />
@@ -23,7 +23,7 @@ export default async function Home() {
         </div>
         <span className='text-center text-sm text-muted-foreground'>{ user?.bio }</span>
       </div>
-      <div className="w-full h-fit max-w-md mx-auto flex items-center justify-center gap-2 py-6">
+      <div className="w-full h-fit max-w-xl mx-auto flex items-center justify-center gap-2 py-6">
         <Link href='https://github.com/yz13-env' className="w-6 aspect-square flex items-center justify-center">
           <BiLogoGithub size={24} />
         </Link>
@@ -32,7 +32,7 @@ export default async function Home() {
          </Link>
         {/* <div className="w-6 aspect-square flex items-center justify-center" /> */}
       </div>
-      <div className="w-full max-w-md mx-auto px-6 py-4">
+      <div className="w-full max-w-xl grid grid-cols-2 auto-rows-auto gap-2 mx-auto px-6 py-4">
         {
           matched
           .sort()
