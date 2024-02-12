@@ -14,7 +14,7 @@ export default async function Home() {
       <div className="w-full max-w-xl mx-auto h-fit flex flex-col gap-4 items-center justify-center px-6 py-12">
         {
           user
-          ? <Image src={user.avatar_url} className='rounded-full' width={96} height={96} alt='user-avatar' />
+          ? <Image priority src={user.avatar_url} className='rounded-full' width={96} height={96} alt='user-avatar' />
           : <div className="w-24 aspect-square rounded-full bg-muted" />
         }
         <div className="w-fit h-fit flex items-center flex-col justify-center">
