@@ -10,7 +10,7 @@ export default async function Home() {
   const repos = await user_api.repos.get()
   const matched = repos.filter(repo => !!projects.find(project => project.projectId === repo.name))
   return (
-    <main className="w-full h-screen">
+    <main className="w-full min-h-screen">
       <div className="w-full max-w-xl mx-auto h-fit flex flex-col gap-4 items-center justify-center px-6 py-12">
         {
           user

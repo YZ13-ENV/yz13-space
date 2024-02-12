@@ -13,8 +13,9 @@ const Project = ({ repo }: Props) => {
   const project_group = extra ? projects_groups.find(group => extra.partOf.includes(group.groupId)) : null
   // TODO - группу и статус поместит в массив и вывести их с соединением в виде точки
   const top_tags = [ project_group?.name, extra ? status_variants(extra?.status) : null ].filter(item => item)
+  const link = extra ? extra.link : ''
   return (
-    <Link href={repo.html_url} key={repo.id} className="w-full flex flex-col border hover:border-primary rounded-lg p-3 transition-colors relative">
+    <Link href={link} key={repo.id} className="w-full flex flex-col border hover:border-primary rounded-lg p-3 transition-colors relative">
       <div className="w-full h-fit flex items-center justify-between">
         <div className="w-fit h-fit flex items-center gap-2">
           {
@@ -39,14 +40,14 @@ const Project = ({ repo }: Props) => {
               {/* { project_group && <span className="text-xs w-fit text-muted-foreground">{ project_group?.name }</span> } */}
               {/* { extra && <span className="text-xs text-muted-foreground">{ status_variants(extra.status) }</span> } */}
             </div>
-            <span className="font-medium text-accent-foreground text-start inline-flex gap-1 items-center">{ extra ? extra.name : repo.name }</span>
+            <span className="font-medium text-sm text-accent-foreground text-start inline-flex gap-1 items-center">{ extra ? extra.name : repo.name }</span>
           </div>
         </div>
       </div>
-      <span className="px-2 py-1 rounded-full bg-muted flex w-fit items-center gap-2 text-xs my-1">
+      <Link href={repo.html_url} className="px-2 py-1 rounded-full bg-muted flex w-fit items-center gap-1 text-xs my-1">
         <BiLogoGithub size={16} />
         { repo.full_name }
-      </span>
+      </Link>
       <span className="text-sm line-clamp-1 text-muted-foreground text-start">{ repo.description || extra?.description || 'Без описания' }</span>
     </Link>
   )
