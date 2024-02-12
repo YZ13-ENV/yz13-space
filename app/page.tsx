@@ -32,7 +32,7 @@ export default async function Home() {
          </Link>
         {/* <div className="w-6 aspect-square flex items-center justify-center" /> */}
       </div>
-      <div className="w-full max-w-xl grid grid-cols-2 auto-rows-auto gap-2 mx-auto px-6 py-4">
+      <div className="w-full max-w-xl grid md:grid-cols-2 grid-cols-1 auto-rows-auto gap-2 mx-auto px-6 py-4">
         {
           matched
           .sort()
