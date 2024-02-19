@@ -109,6 +109,19 @@ export const projects: Project[] = [
     tags: []
   },
   {
+    projectId: "playground",
+    type: "app",
+    name: "Weecode Play",
+    description: "",
+    status: "prod",
+    link: "https://play.darkmaterial.space",
+    partOf: [ "darkmaterial-group" ],
+    disabled: false,
+    createdAt: 0,
+    icon: "https://cdn.darkmaterial.space/dm/icons/weecode-dark.svg",
+    tags: []
+  },
+  {
     projectId: "calendar",
     type: "app",
     name: "Calendar",
