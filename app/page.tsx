@@ -3,6 +3,7 @@ import ReposSkeleton from '@/components/skeletons/repos'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Suspense } from 'react'
 import { BiLogoGithub, BiLogoTelegram } from 'react-icons/bi'
 const ReposGrid = dynamic(() => import('./_components/repos-grid'), {
   loading: () => <ReposSkeleton />
@@ -36,7 +37,7 @@ export default async function Home() {
           <BiLogoTelegram size={24} />
         </Link>
       </div>
-      <ReposGrid />
+      <Suspense fallback={<ReposSkeleton />}><ReposGrid /></Suspense>
     </main>
   )
 }
