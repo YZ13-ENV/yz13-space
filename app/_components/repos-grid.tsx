@@ -9,7 +9,6 @@ const ReposGrid = async () => {
   const repos = await user_api.repos.get()
   const projects = await default_api.all()
   const github_link = "https://github.com/yz13-env"
-  console.log(projects)
   return (
     <>
       <div className='w-full flex items-center mt-12 justify-between max-w-xl mx-auto px-6'>
